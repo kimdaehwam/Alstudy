@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main()
+{
+	int day, number[6], i, j, k;
+	scanf("%d", &day);
+	k = 0;
+	for (i = 1;i <= 5;i++)
+	{
+		scanf("%d", &number[i]);
+	}
+	for (j = 1;j <= 5;j++)
+	{
+		if (day == number[j]) {
+			k++;
+		}
+	}
+	printf("%d", k);
+	return 0;
+}
