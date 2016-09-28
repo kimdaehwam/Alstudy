@@ -1,0 +1,28 @@
+#include <stdio.h>
+int A, B, i, j, k, l, m, n;
+int sequence[100000];
+int function(int N)
+{
+	if (N == A)
+		return sequence[A];
+	else
+		return sequence[N] + function(N - 1);
+}
+int main()
+{
+	k, j, l = 1;
+	m = 1;
+	scanf("%d %d", &A, &B);
+	for (i = 1;i <= 100;i++)
+	{
+		for (j = l;j <= m;j++)
+		{
+			sequence[j-1] = k;
+		}
+		l = l + (m - l + 1);
+		k++;
+		m = k - 1 + l;
+	}
+	printf("%d", function(B));
+	return 0;
+}
