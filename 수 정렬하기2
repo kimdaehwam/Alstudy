@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int main()
+{
+	int N;
+	cin >> N;
+	vector<int> number;
+	number.resize(N);
+	for (int i = 0;i <= N - 1;i++)
+		cin >> number[i];
+	sort(number.begin(), number.end());
+	for (int j = 0;j <= N - 1;j++)
+		printf("%d\n", number[j]);
+
+	return 0;
+}
