@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int N;
+int arr[101];
+int sum(int N);
+int main()
+{
+	scanf("%d", &N);
+	for (int i = 1;i <= N;i++)
+	{
+		scanf("%1d", &arr[i]);
+	}
+	printf("%d", sum(N));
+	
+	return 0;
+}
