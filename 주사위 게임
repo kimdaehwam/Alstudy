@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int n;
+	cin >> n;
+	int A = 100;
+	int B = 100;
+	int number1;
+	int number2;
+	while (n--)
+	{
+		cin >> number1 >> number2;
+		if (number1 > number2)
+			B = B - number1;
+		else if (number1 < number2)
+			A = A - number2;
+	}
+	cout << A << endl << B;
+
+	return 0;
+}
