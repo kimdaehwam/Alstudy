@@ -1,0 +1,23 @@
+#include <stdio.h>
+int total, i, sum;
+int book[10];
+int function(int N);
+int main()
+{
+	scanf("%d", &total);
+	for (i = 1;i <= 9;i++)
+	{
+		scanf("%d", &book[i]);
+	}
+	sum = function(9);
+	printf("%d", total - sum);
+	return 0;
+}
+
+int function(int N)
+{
+	if (N == 1)
+		return book[1];
+	else
+		return book[N] + function(N - 1);
+}
