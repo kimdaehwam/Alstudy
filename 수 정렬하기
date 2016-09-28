@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int N, i, j, arr[1001], bubble;
+	cin >> N;
+	for (int k = 0 ; k <= N - 1;k++)
+		cin >> arr[k];
+
+	for (i = 0;i < N - 1;i++)
+	{
+		for(j=0;j<(N-1)-i;j++)
+			if (arr[j] > arr[j + 1])
+			{
+				bubble = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = bubble;
+			}
+	}
+	for (int l = 0;l <= N - 1;l++)
+		printf("%d\n", arr[l]);
+
+	return 0;
+}
