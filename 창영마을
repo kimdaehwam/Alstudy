@@ -1,0 +1,47 @@
+#include <stdio.h>
+int main()
+{
+    int cup[3], i, j, k, l, m, n,index;
+    char arr[51];
+    index = 0;
+    cup[0] = 7;
+    cup[1] = 0;
+    cup[2] = 0;
+    fgets(arr, sizeof(arr), stdin);
+ 
+    while (arr[index] != '\0')
+    {
+        if (arr[index]=='A') {
+            i = cup[0];
+            j = cup[1];
+            cup[0] = j;
+            cup[1] = i;
+        }
+        else if (arr[index]=='B') {
+            k = cup[1];
+            l = cup[2];
+            cup[1] = l;
+            cup[2] = k;
+        }
+        else if (arr[index]=='C') {
+            m = cup[0];
+            n = cup[2];
+            cup[0] = n;
+            cup[2] = m;
+        }
+        index++;
+     
+    }
+     
+    if (cup[0] == 7) {
+        printf("%d", 1);
+    }
+    else if (cup[1] == 7) {
+        printf("%d", 2);
+    }
+    else if (cup[2] == 7) {
+        printf("%d", 3);
+    }
+ 
+    return 0;
+}
