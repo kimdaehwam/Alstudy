@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main ()
+{
+	int N, X,i,j;
+	scanf("%d %d", &N, &X);
+	for (i = 0;i <= N - 1;i++)
+	{
+		scanf("%d", &j);
+		if (j < X) { 
+			printf("%d ", j);
+		}
+	
+	}
+	
+	return 0;
+}
