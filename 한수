@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <iostream>
+
+using namespace std;
+
+int N;
+int function(int N)
+{
+	int A, B, C, a;
+	int count = 0;
+	for (int i = N;i >= 100;i--)
+	{
+		A = i / 100;
+		a = i % 100;
+		B = a / 10;
+		C = a % 10;
+		if (A - B == B - C)
+			count++;
+	}
+	return count + 99;
+}
+int main()
+{
+	cin >> N;
+	if (N <= 9)
+		cout << N;
+	else if (N >= 10 && N <= 99)
+		cout << N;
+	else if (N >= 100)
+		cout << function(N);
+
+	return 0;
+}
