@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int a, b;
+	int hambuger[4];
+	int beverage[3];
+	for (int i = 1;i <= 3;i++)
+		cin >> hambuger[i];
+	for (int j = 1;j <= 2;j++)
+		cin >> beverage[j];
+
+	if (hambuger[1] <= hambuger[2] && hambuger[1] <= hambuger[3])
+		a = hambuger[1];
+	if (hambuger[2] <= hambuger[1] && hambuger[2] <= hambuger[3])
+		a = hambuger[2];
+	if (hambuger[3] <= hambuger[1] && hambuger[3] <= hambuger[2])
+		a = hambuger[3];
+	if (beverage[1] >= beverage[2])
+		b = beverage[2];
+	if (beverage[2] >= beverage[1])
+		b = beverage[1];
+	
+	cout << a + b - 50;
+
+	return 0;
+}
