@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+struct member
+{
+	int age;
+	char name[101];
+	int order;
+};
+
+bool cmp(const member &u, const member &v)
+{
+	if (u.age < v.age)
+		return true;
+	else if (u.age == v.age)
+		return u.order < v.order;
+	return false;
+}
+
+int main()
+{   
+	int N;
+	scanf("%d", &N);
+	vector<member> v;
+	v.resize(N);
+	for (int i = 0;i <= N - 1;i++)
+	{
+		scanf("%d %s", &v[i].age, v[i].name);
+		v[i].order = i;
+	}
+	sort(v.begin(), v.end(), cmp);
+	for (int i = 0;i <= N - 1;i++)
+	{
+		printf("%d %s\n", v[i].age, v[i].name);
+	}
+
+	return 0;
+}	
