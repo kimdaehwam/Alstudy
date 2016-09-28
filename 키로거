@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <iostream>
+#include <stack>
+#include <string>
+
+using namespace std;
+int main()
+{
+	int N, i;
+	scanf("%d", &N);
+	while (N--)
+	 { 
+		stack <char> A, B;
+		string s;
+		cin >> s;
+		for (i = 0;s[i] != '\0';i++)
+		{
+			if (s[i] == '<') {
+				if (!A.empty()) {
+					A.top();
+					B.push(A.top());
+					A.pop();
+				}
+			}
+			else if (s[i] == '>') {
+				if (!B.empty()) {
+					B.top();
+					A.push(B.top());
+					B.pop();
+				}
+			}
+			else if (s[i] == '-') {
+				if (!A.empty())
+					A.pop();
+			}
+			else {
+				A.push(s[i]);
+			}
+		}
+		while (!B.empty()) {
+			B.top();
+			A.push(B.top());
+			B.pop();
+			}
+		while (!A.empty()) {
+			A.top();
+			B.push(A.top());
+			A.pop();
+			}
+		while (!B.empty()) {
+			B.top();
+			printf("%c", B.top());
+			B.pop();
+			}
+		printf("\n");
+	}
+	return 0;
+}
