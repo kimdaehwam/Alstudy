@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int N, K, count1, count2;
+	cin >> N >> K;
+	count1 = 0;
+	count2 = 0;
+	for (int i = 1;i <= N;i++)
+	{
+		if (N % i == 0)
+			count1++;
+		count2++;
+		if (count1 == K)
+			break;
+	}
+	if (count1 == K)
+		cout << count2;
+	else
+		cout << 0;
+
+	return 0;
+}
