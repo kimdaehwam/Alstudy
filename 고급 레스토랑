@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int A, B, a, b;
+	cin >> A >> a >> B >> b;
+	while (a > 0 && b > 0)
+	{
+		a = a - B;
+		b = b - A;
+	}
+	if (a > 0 && b <= 0)
+		cout << "PLAYER A";
+	else if (b > 0 && a <= 0)
+		cout << "PLAYER B";
+	else if (a <= 0 && b <= 0)
+		cout << "DRAW";
+
+	return 0;
+}
