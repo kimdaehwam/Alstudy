@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int A, B;
+	cin >> A >> B;
+	int small = 0;
+	for (int i = 1;i <= A;i++)
+	{
+		if (A % i == 0 && B % i == 0)
+			small = i;
+	}
+	int min1, min2;
+	min1 = A / small;
+	min2 = B / small;
+	int max = min1*min2*small;
+	cout << small << endl << max;
+
+	return 0;
+}
