@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int i, j, arr[1001], brr[1001], bubble1, bubble2;
+	for (int k = 0; k <= 9;k++)
+	{
+		cin >> arr[k];
+	}
+	for (int m = 0;m <= 9;m++)
+	{
+		cin >> brr[m];
+	}
+	for (i = 0;i < 9;i++)
+	{
+		for (j = 0;j < 9 - i;j++)
+		{
+			if (arr[j] > arr[j + 1])
+			{
+				bubble1 = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = bubble1;
+			}
+			if (brr[j] > brr[j + 1])
+			{
+				bubble2 = brr[j];
+				brr[j] = brr[j + 1];
+				brr[j + 1] = bubble2;
+			}
+		}
+	}
+	printf("%d ", arr[7] + arr[8] + arr[9]);
+	printf("%d", brr[7] + brr[8] + brr[9]);
+
+	return 0;
+}
