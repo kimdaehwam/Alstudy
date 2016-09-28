@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <iostream>
+#include <string>
+#include <queue>
+
+using namespace std;
+int main()
+{
+	int T;
+	cin >> T;
+	while (T--) {
+		int N, i, j;
+		queue <string> q;
+		cin >> N;
+		string S;
+		int L[100];
+		for (i = 1;i <= N;i++)
+		{
+			cin >> S;
+			cin >> L[i];
+			q.push(S);
+		}
+		int top;
+		string name;
+		top = L[1];
+		name = q.front();
+		q.pop();
+		for (j = 2;j <= N;j++)
+		{
+			if (L[j] > top)
+			{
+				top = L[j];
+				name = q.front();
+				q.pop();
+			}
+			else
+				q.pop();
+		}
+		cout << name;
+		printf("\n");
+	}
+	return 0;
+}
