@@ -1,0 +1,42 @@
+#include <stdio.h>
+int N, T;
+int i;
+double sum, total, GPA;
+int C[11];
+double G[11];
+double function1(int N);
+double function2(int N);
+int main()
+{
+	scanf("%d", &T);
+	while (T--) {
+		
+		scanf("%d", &N);
+		for (i = 1;i <= N;i++)
+		{
+			scanf("%d %lf", &C[i], &G[i]);
+		}
+		total = function1(N);
+		sum = function2(N);
+		GPA = total / sum;
+		printf("%.0f %.1f", sum, GPA);
+		printf("\n");
+	}
+	return 0;
+}
+
+double function1(int N)
+{
+	if (N == 1)
+		return C[1] * G[1];
+	else
+		return C[N] * G[N] + function1(N - 1);
+}
+
+double function2(int N)
+{
+	if (N == 1)
+		return C[1];
+	else
+		return C[N] + function2(N - 1);
+}
