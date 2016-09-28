@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main()
+{
+	int A, B, C, D, E, total,number;
+	scanf("%d %d %d %d %d", &A, &B, &C, &D, &E);
+	total = A*A + B*B + C*C + D*D + E*E;
+	number = total % 10;
+	printf("%d", number);
+
+	return 0;
+}
