@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <iostream>
+#include <queue>
+#include <algorithm>
+
+using namespace std;
+
+int main()
+{
+	int N = 1;
+	int arr[10];
+	queue<int> q;
+	arr[0] = 0;
+	for (int i = 1;i <= 9;i++)
+	{
+		cin >> arr[i];
+		q.push(arr[i]);
+	}
+	sort(arr, arr + 10);
+	while (q.front() != arr[9])
+	{
+		q.pop();
+		N++;
+	}
+	cout << arr[9] << endl;
+	cout << N;
+
+	return 0;
+}
