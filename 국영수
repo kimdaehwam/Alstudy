@@ -1,0 +1,45 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+struct score
+{
+	string name;
+	int korean;
+	int english;
+	int math;
+	int order;
+};
+
+bool cmp(const score &u, const score &v)
+{
+	if (u.korean > v.korean)
+		return true;
+	else if (u.korean == v.korean && u.english != v.english)
+		return u.english < v.english;
+	else if (u.korean == v.korean && u.english == v.english && u.math != v.math)
+		return u.math > v.math;
+	else if (u.korean == v.korean && u.english == v.english && u.math == v.math)
+		return u.name < v.name;
+	return false;
+}
+
+int main()
+{
+	int N, askii;
+	cin >> N;
+	vector<score> v;
+	v.resize(N);
+	for (int i = 0;i <= N - 1;i++)
+	{
+		cin >> v[i].name >> v[i].korean >> v[i].english >> v[i].math;
+	}
+	sort(v.begin(), v.end(), cmp);
+	for (int i = 0;i <= N - 1;i++)
+		cout << v[i].name << '\n';
+
+	return 0;
+}
