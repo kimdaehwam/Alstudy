@@ -1,0 +1,49 @@
+#include <stdio.h>
+int main ()
+{
+	int arr[4],brr[4],crr[4],drr[4],err[4],i,A,B,C,D,E;
+	for (i = 0;i <= 3;i++)
+	{
+		scanf("%d", &arr[i]);
+	}
+	for (i = 0;i <= 3;i++)
+	{
+		scanf("%d", &brr[i]);
+	}
+	for (i = 0;i <= 3;i++)
+	{
+		scanf("%d", &crr[i]);
+	}
+	for (i = 0;i <= 3;i++)
+	{
+		scanf("%d", &drr[i]);
+	}
+	for (i = 0;i <= 3;i++)
+	{
+		scanf("%d", &err[i]);
+	}
+
+	A = arr[0] + arr[1] + arr[2] + arr[3];
+	B = brr[0] + brr[1] + brr[2] + brr[3];
+	C = crr[0] + crr[1] + crr[2] + crr[3];
+	D = drr[0] + drr[1] + drr[2] + drr[3];
+	E = err[0] + err[1] + err[2] + err[3];
+
+	if (A > B && A > C && A > D && A > E) { 
+		printf("1"); printf(" %d", A);
+	}
+	else if (B > A && B > C && B > D && B > E) { 
+		printf("2"); printf(" %d", B);
+	}
+	else if (C > A && C > B && C > D && C > E) { 
+		printf("3"); printf(" %d", C);
+	} 
+	else if (D > A && D > B && D > C && D > E) { 
+		printf("4"); printf(" %d", D);
+	}
+	else if (E > A && E > B && E > C && E > D) { 
+		printf("5"); printf(" %d", E);
+	}
+
+	return 0;
+}
