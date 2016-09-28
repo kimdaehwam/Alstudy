@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int N, A, B;
+	cin >> N;
+	for (int i = 1;i <= N;i++)
+	{
+		cin >> A;
+		cin >> B;
+		printf("Case #");
+		printf("%d", i);
+		printf(": ");
+		printf("%d\n", A + B);
+	}
+
+	return 0;
+}
