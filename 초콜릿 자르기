@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <iostream>
+#include <string>
+
+using namespace std;
+int main()
+{
+	int N, M, answer;
+	cin >> N;
+	cin >> M;
+	answer = N*M - 1;
+	cout << answer;
+
+	return 0;
+}
