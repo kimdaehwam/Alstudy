@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <iostream>
+#include <string.h>
+#define SIZE 1000001
+
+using namespace std;
+
+bool is_prime[SIZE];
+
+void erathos()
+{
+	memset(is_prime, true, sizeof(is_prime));
+	is_prime[0] = false;
+	is_prime[1] = false;
+	for (int i = 2;i * i <= SIZE;i++)
+	{
+		for (int j = i + i;j <= SIZE;j += i)
+			is_prime[j] = false;
+	}
+}
+
+int main()
+{
+	erathos();
+	
+	int M, N;
+	scanf("%d %d", &M, &N);
+	for (int i = M;i <= N;i++)
+	{
+		if (is_prime[i])
+			printf("%d\n", i);
+	}
+
+	return 0;
+}
