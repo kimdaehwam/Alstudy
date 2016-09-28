@@ -1,0 +1,46 @@
+#include <stdio.h>
+int main()
+{
+	int A ,d = 0;
+	int a, B, b, C, c, D, x, y, z, w;
+	scanf("%d %d", &A, &a);
+	scanf("%d %d", &B, &b);
+	scanf("%d %d", &C, &c);
+	scanf("%d %d", &D, &d);
+	x = A + a;
+	y = x - B + b;
+	z = y - C + c;
+	w = z - D + d;
+	if (x == y && y == z) {
+		printf("%d", x);
+	}
+	else if (x == y && y > z) {
+		printf("%d", x);
+	}
+	else if (y == z && z > x) {
+		printf("%d", y);
+	}
+	else if (z == x && x > y) {
+		printf("%d", z);
+	}
+	else if (x == y && y < z) {
+		printf("%d", z);
+	}
+	else if (y == z && z < x) {
+		printf("%d", x);
+	}
+	else if (z == x && x < y) {
+		printf("%d", y);
+	}
+	else if (x > y && x > z) {
+		printf("%d", x);
+	}
+	else if (y > x && y > z) {
+		printf("%d", y);
+	}
+	else if (z > x && z > y) {
+		printf("%d", z);
+	}
+
+	return 0;
+}
