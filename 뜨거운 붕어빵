@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <iostream>
+#include <stack>
+#include <vector>
+
+using namespace std;
+
+int main()
+{
+	int N, M;
+	cin >> N >> M;
+	vector<int> v;
+	v.resize(M+1);
+	stack<int> st;
+	while (N--)
+	{
+		for (int i = 1;i <= M;i++)
+		{
+			scanf("%1d", &v[i]);
+			st.push(v[i]);
+		}
+		while (!st.empty())
+		{
+			cout << st.top();
+			st.pop();
+		}
+		cout << endl;
+	}
+
+	return 0;
+}
