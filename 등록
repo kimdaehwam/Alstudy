@@ -1,0 +1,9 @@
+#include <stdio.h>
+int main ()
+{
+    printf("20\n");
+    printf("heeqwas");
+     
+    return 0;
+     
+}
