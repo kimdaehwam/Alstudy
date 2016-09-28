@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	string JH;
+	cin >> JH;
+	int i = 0;
+	while (JH[i] != '\0')
+	{
+		i++;
+	}
+	string Dr;
+	cin >> Dr;
+	int j = 0;
+	while (Dr[j] != '\0')
+	{
+		j++;
+	}
+	if (i >= j)
+		printf("go");
+	else
+		printf("no");
+
+	return 0;
+}
