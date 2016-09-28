@@ -1,0 +1,44 @@
+#include <stdio.h>
+int main ()
+{
+	int x, y, i;
+	int j = 0;
+	scanf("%d %d", &x, &y);
+	for (i = 1;i <= x - 1;i++)
+	{
+		if (i == 2) {
+			j = j + 28;
+		}
+		else if (i == 4 || i == 6 || i == 9 || i == 11) {
+			j = j + 30;
+		}
+		else {
+			j = j + 31;
+		}
+
+	}
+	
+	if (((j + y) % 7) == 1) {
+		printf("MON");
+	}
+	else if (((j + y) % 7) == 2) {
+		printf("TUE");
+	}
+	else if (((j + y) % 7) == 3) {
+		printf("WED");
+	}
+	else if (((j + y) % 7) == 4) {
+		printf("THU");
+	}
+	else if (((j + y) % 7) == 5) {
+		printf("FRI");
+	}
+	else if (((j + y) % 7) == 6) {
+		printf("SAT");
+	}
+	else {
+		printf("SUN");
+	}
+
+	return 0;
+}
