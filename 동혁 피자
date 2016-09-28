@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int N = 1;
+	int r, w, l, R;
+	while (1)
+	{
+		cin >> r;
+		cin >> w;
+		cin >> l;
+		R = 2 * r;
+		if (r == 0)
+			break;
+		if (R*R >= w*w + l*l)
+			printf("Pizza %d fits on the table.\n", N);
+		else if (R*R <= w*w + l*l)
+			printf("Pizza %d does not fit on the table.\n", N);
+		N++;
+	}
+
+	return 0;
+}
