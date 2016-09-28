@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int N;
+	cin >> N;
+	while (N--)
+	{
+		int A, B;
+		cin >> A;
+		cin >> B;
+		printf("%d\n", A + B);
+	}
+
+	return 0;
+}
