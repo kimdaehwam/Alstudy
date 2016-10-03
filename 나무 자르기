@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+long long n, m;
+vector<long long> tall;
+long long arr[1000001];
+
+long long sum(long long n)
+{
+	if (n == 0)
+		return arr[0];
+	else
+		return arr[n] + sum(n - 1);
+}
+
+bool decision(long long mid)
+{
+	for (long long i = 0;i <= n - 1;i++)
+	{
+		if (tall[i] - mid >= 0)
+			arr[i] = tall[i] - mid;
+		else
+			arr[i] = 0;
+	}
+	if (sum(n) >= m)
+		return true;
+	else
+		return false;
+}
+
+long long cut()
+{
+	long long low = 0;
+	long long high = 1000000000;
+	long long mid;
+	for (long long i = 1;i <= 100;i++)
+	{
+		mid = (high + low) / 2;
+		if (decision(mid))
+			low = mid;
+		else
+			high = mid;
+	}
+		
+	return low;
+}
+
+int main()
+{
+	cin >> n >> m;
+	tall.resize(n);
+	for (long long i = 0;i <= n - 1;i++)
+		cin >> tall[i];
+	sort(tall.begin(), tall.end());
+	cout << cut();
+
+	return 0;
+}
