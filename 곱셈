@@ -1,0 +1,1 @@
+#include <stdio.h>#include <iostream>using namespace std;int main(){ int m, n; cin >> m >> n; int arr[4]; arr[3] = m*n; for (int i = 0;i <= 2;i++) {  arr[i] = m*(n % 10);  n = n / 10; } for (int i = 0;i <= 3;i++)  cout << arr[i] <<endl;  return 0;}
