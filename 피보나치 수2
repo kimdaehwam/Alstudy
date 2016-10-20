@@ -1,0 +1,1 @@
+#include <stdio.h>#include <iostream>using namespace std;int n;long long memo[91];long long fibonacci(int n){ if (n == 1 || n == 2)  return 1; long long &ret = memo[n]; if (ret != 0)  return ret; ret = fibonacci(n - 1) + fibonacci(n - 2); return ret;}int main(){ cin >> n; printf("%lld", fibonacci(n)); return 0;}
