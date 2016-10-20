@@ -1,0 +1,1 @@
+#include <stdio.h>#include <iostream>#include <vector>#include <algorithm>using namespace std;int main(){ int N; int refuse = 0; cin >> N; vector<int> seat; seat.resize(N); for (int i = 0;i <= N-1;i++)  cin >> seat[i]; sort(seat.begin(), seat.end()); for (int i = 0;i <= N - 1;i++) {  if (i < N - 1)  {   if (seat[i] == seat[i + 1])    refuse++;  } } cout << refuse; return 0;}
